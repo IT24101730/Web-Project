@@ -71,15 +71,15 @@
     while (current != null) {
   %>
   <div class="toy-card">
-    <img src="<%= current.imagePath %>" alt="Toy image">
-    <div class="toy-name"><%= current.name %></div>
-    <div class="toy-age">Age Group: <%= current.ageGroup %>+</div>
-    <div class="toy-category">Category: <strong><%= current.category %></strong></div>
-    <div class="toy-price">$<%= String.format("%.2f", current.price) %></div>
+    <img src="<%= current.getImagePath() %>" alt="Toy image">
+    <div class="toy-name"><%= current.getName() %></div>
+    <div class="toy-age">Age Group: <%= current.getAgeGroup() %>+</div>
+    <div class="toy-category">Category: <strong><%= current.getCategory() %></strong></div>
+    <div class="toy-price">$<%= String.format("%.2f", current.getPrice()) %></div>
 
     <div class="actions">
-      <a href="EditToyServlet?id=<%= current.id %>">Edit</a> |
-      <a href="DeleteToyServlet?id=<%= current.id %>" onclick="return confirm('Are you sure?');">Delete</a>
+      <a href="EditToyServlet?id=<%= current.getId() %>">Edit</a> |
+      <a href="DeleteToyServlet?id=<%= current.getId() %>" onclick="return confirm('Are you sure?');">Delete</a>
     </div>
   </div>
   <%
